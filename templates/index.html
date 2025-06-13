@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boston House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-home"></i> Boston House Price Prediction</h1>
+            <p>Enter the features of the house to predict its price.</p>
+        </header>
+
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="crime_rate">Crime Rate:</label>
+                <input type="number" step="any" id="crime_rate" name="CRIM" required placeholder="Crime rate per capita">
+            </div>
+
+            <div class="form-group">
+                <label for="residential_zone">Residential Zone:</label>
+                <input type="number" step="any" id="residential_zone" name="ZN" required placeholder="Proportion of residential land">
+            </div>
+
+            <div class="form-group">
+                <label for="business_acres">Business Acres:</label>
+                <input type="number" step="any" id="business_acres" name="INDUS" required placeholder="Proportion of non-retail acres">
+            </div>
+
+            <div class="form-group">
+                <label for="river_proximity">Charles River Proximity:</label>
+                <input type="number" step="any" id="river_proximity" name="CHAS" required placeholder="1 if near river, 0 if not">
+            </div>
+
+             <div class="form-group">
+                <label for="air_quality">Air Quality:</label>
+                <select id="air_quality" name="air_quality" required>
+                    <option value="Very Good">Very Good</option>
+                    <option value="Good">Good</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Poor">Poor</option>
+                    <option value="Very Poor">Very Poor</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="num_rooms">Number of Rooms:</label>
+                <input type="number" step="any" id="num_rooms" name="RM" required placeholder="Average number of rooms">
+            </div>
+
+            <div class="form-group">
+                <label for="property_age">Property Age:</label>
+                <input type="number" step="any" id="property_age" name="AGE" required placeholder="Age of the property">
+            </div>
+
+             <div class="form-group">
+                <label for="accessibility">Accessibility to Jobs (1-10):</label>
+                <input type="number" id="accessibility" name="accessibility" min="1" max="10" required placeholder="1 (Very Inaccessible) - 10 (Very Accessible)">
+            </div>
+
+            <div class="form-group">
+                <label for="highway_access">Highway Access:</label>
+                <input type="number" step="any" id="highway_access" name="RAD" required placeholder="Accessibility to highways">
+            </div>
+
+            <div class="form-group">
+                <label for="tax_rate">Property Tax Rate:</label>
+                <input type="number" step="any" id="tax_rate" name="TAX" required placeholder="Property tax rate">
+            </div>
+
+            <div class="form-group">
+                <label for="pupil_teacher_ratio">Pupil-Teacher Ratio:</label>
+                <input type="number" step="any" id="pupil_teacher_ratio" name="PTRATIO" required placeholder="Pupil-teacher ratio">
+            </div>
+<button type="submit" class="btn">Predict Price</button>
+        </form>
+
+        {% if prediction_text %}
+            <div class="prediction">
+                <h3>Prediction:</h3>
+                <p>{{ prediction_text }}</p>
+            </div>
+        {% endif %}
+
+        <footer>
+            <p><a href="https://www.linkedin.com/in/ramharsh-sanjay-dandekar" target="_blank">Contact Us</a></p>
+        </footer>
+    </div>
+</body>
+</html>

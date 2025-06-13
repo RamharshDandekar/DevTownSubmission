@@ -1,0 +1,121 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef; /* Lighter background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #343a40; /* Darker text color */
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    width: 600px; /* Wider container */
+    max-width: 95%; /* Responsive width */
+    text-align: center;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #007bff; /* Primary color */
+    font-size: 2.5rem; /* Larger title */
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #6c757d; /* Secondary text color */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500; /* Semi-bold */
+    color: #495057;
+}
+
+input[type="text"],  /* Added text input style */
+input[type="number"],
+select {          /* Added select style */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus shadow */
+}
+
+.btn {
+    background-color: #007bff; /* Primary color */
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker shade */
+}
+
+.prediction {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background */
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.prediction h3 {
+    color: #28a745; /* Success color */
+    margin-bottom: 10px;
+}
+
+.prediction p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #dee2e6;
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-align: center; /* Center the contact us link */
+}
+
+footer a {
+    color: #007bff;  /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: #0056b3; /* Darker shade on hover */
+}
